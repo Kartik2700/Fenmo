@@ -33,6 +33,8 @@ var store = &DB{
 
 func main() {
 	mux := http.NewServeMux()
+	// This serves index.html
+	mux.Handle("/", http.FileServer(http.Dir("./")))
 
 	// Post endpoint to register the Expenses
 	mux.HandleFunc("POST /expenses", RegisterExpense)

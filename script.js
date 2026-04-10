@@ -73,6 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Update Total display
-        totalDisplay.innerText = `₹${(totalAmount).toFixed(2)}`;
+        totalDisplay.innerText = `₹${(totalAmount)}`;
     }
 });

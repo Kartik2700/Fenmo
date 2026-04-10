@@ -12,11 +12,11 @@ import (
 // Expense structure to store details about expense
 type Expense struct {
 	ID          int       `json:"id"`
-	Amount      int64     `json:"amount"`      // Stored in cents [cite: 33]
-	Category    string    `json:"category"`    // [cite: 34]
-	Description string    `json:"description"` // [cite: 35]
-	Date        string    `json:"date"`        // [cite: 36]
-	CreatedAt   time.Time `json:"created_at"`  // [cite: 37]
+	Amount      int64     `json:"amount"` 
+	Category    string    `json:"category"`    
+	Description string    `json:"description"`
+	Date        string    `json:"date"`      
+	CreatedAt   time.Time `json:"created_at"` 
 }
 
 // In-Memory Database

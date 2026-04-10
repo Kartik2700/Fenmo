@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Function to Fetch and Display Data
     async function loadExpenses() {
         const category = filterCategory.value;
-        const url = category ? `http://localhost:8080/expenses?category=${category}` : 'http://localhost:8080/expenses';
+        const url = category ? `/expenses?category=${category}` : '/expenses';
 
         try {
             const res = await fetch(url);

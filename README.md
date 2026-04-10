@@ -1,5 +1,6 @@
 # Fenmo
 # Personal Expense Tracker
+**Live Application:** [https://fenmo-expense-tracker-sueo.onrender.com/](https://fenmo-expense-tracker-sueo.onrender.com/)
 
 A minimal full-stack application to record and review personal expenses.
 Built to handle real-world conditions like unreliable networks and retries while maintaining data integrity.

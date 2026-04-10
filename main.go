@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"os"
 	"sort"
 	"sync"
 	"time"
@@ -12,11 +13,11 @@ import (
 // Expense structure to store details about expense
 type Expense struct {
 	ID          int       `json:"id"`
-	Amount      int64     `json:"amount"` 
-	Category    string    `json:"category"`    
+	Amount      int64     `json:"amount"`
+	Category    string    `json:"category"`
 	Description string    `json:"description"`
-	Date        string    `json:"date"`      
-	CreatedAt   time.Time `json:"created_at"` 
+	Date        string    `json:"date"`
+	CreatedAt   time.Time `json:"created_at"`
 }
 
 // In-Memory Database
@@ -42,8 +43,13 @@ func main() {
 	// Get endpoint to fetch Expenses
 	mux.HandleFunc("GET /expenses", GetExpenses)
 
-	log.Println("Server starting on :8080 (In-Memory Mode)...")
-	if err := http.ListenAndServe(":8080", mux); err != nil {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // Fallback for local development
+	}
+
+	log.Printf("Server starting on : %s (In-Memory Mode)...\n", port)
+	if err := http.ListenAndServe(":"+port, mux); err != nil {
 		log.Fatal(err)
 	}
 }
